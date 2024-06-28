@@ -41,5 +41,5 @@ const num3 = 5;
 
 console.log(`Adding ${num1} and ${num2} gives:`, add(num1, num2));
 console.log(`Subtracting ${num2} from ${num1} gives:`, subtract(num1, num2));
-console.log('fruitCorrect', fruitCorrect);
+console.log('Fruit Correct', fruitCorrect.type);
 multiplyAndLog(num1, num2); // This should also trigger an error
