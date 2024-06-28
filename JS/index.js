@@ -20,6 +20,19 @@ function multiplyAndLog(a, b) {
     return result;
 }
 
+class Apple {
+    // This should not trigger an error
+    constructor() {
+        this.type = 'fruit';
+    }
+
+    getType() {
+        return this.type;
+    }
+}
+
+const fruitCorrect = new Apple();
+
 const num1 = 10;
 const num2 = 5;
 const num3 = 5;

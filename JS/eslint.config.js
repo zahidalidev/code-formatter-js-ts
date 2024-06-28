@@ -41,20 +41,31 @@ export default [
             'max-len': ['error', { code: 80 }],
             'id-match': [
                 'error',
-                '^[a-z]+([A-Z0-9][a-z0-9]*)*$|^[A-Z][a-zA-Z0-9]*$',
+                '^[a-z]+([A-Z0-9][a-z0-9]*)*$',
                 {
                     properties: true,
                     onlyDeclarations: true,
                 },
             ],
-            'new-cap': ['error', { newIsCap: true, capIsNew: false }],
+            'new-cap': [
+                'error',
+                {
+                    newIsCap: true,
+                    capIsNew: false,
+                    properties: false,
+                },
+            ],
             'padding-line-between-statements': [
                 'error',
                 { blankLine: 'always', prev: '*', next: 'return' },
                 { blankLine: 'always', prev: 'block-like', next: '*' },
                 { blankLine: 'always', prev: '*', next: 'block-like' },
             ],
-            'lines-between-class-members': ['error', 'always', { exceptAfterSingleLine: true }],
+            'lines-between-class-members': [
+                'error',
+                'always',
+                { exceptAfterSingleLine: true },
+            ],
             'newline-per-chained-call': ['error', { ignoreChainWithDepth: 2 }],
         },
     },
