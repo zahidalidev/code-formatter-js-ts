@@ -2,14 +2,17 @@ import globals from 'globals';
 import eslintRecommended from '@eslint/js';
 import prettierPlugin from 'eslint-plugin-prettier';
 import prettierConfig from 'eslint-config-prettier';
+import typescriptEslint from '@typescript-eslint/eslint-plugin';
+import typescriptEslintParser from '@typescript-eslint/parser';
 
 export default [
     {
-        files: ['**/*.js', '**/*.jsx'],
-        ignores: ['eslint.config.js'],
+        files: ['src/**/*.ts', 'src/**/*.tsx', 'src/**/*.js', 'src/**/*.jsx'],
+        ignores: ['eslint.config.mjs', 'dist/**'],
         languageOptions: {
             ecmaVersion: 12,
             sourceType: 'module',
+            parser: typescriptEslintParser,
             globals: {
                 ...globals.browser,
                 ...globals.es2021,
@@ -17,12 +20,14 @@ export default [
             },
         },
         plugins: {
+            '@typescript-eslint': typescriptEslint,
             prettier: prettierPlugin,
         },
         rules: {
+            ...eslintRecommended.configs.recommended.rules,
+            ...typescriptEslint.configs.recommended.rules,
             'prettier/prettier': ['error', prettierConfig],
             'no-undef': 'error',
-            'no-unused-vars': 'error',
             'no-console': 'off',
             'no-redeclare': 'error',
             'no-constant-condition': 'warn',
