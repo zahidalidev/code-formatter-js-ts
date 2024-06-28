@@ -6,6 +6,7 @@ import prettierConfig from 'eslint-config-prettier';
 export default [
     {
         files: ['**/*.js', '**/*.jsx'],
+        ignores: ['eslint.config.js'],
         languageOptions: {
             ecmaVersion: 12,
             sourceType: 'module',
@@ -47,6 +48,14 @@ export default [
                 },
             ],
             'new-cap': ['error', { newIsCap: true, capIsNew: false }],
+            'padding-line-between-statements': [
+                'error',
+                { blankLine: 'always', prev: '*', next: 'return' },
+                { blankLine: 'always', prev: 'block-like', next: '*' },
+                { blankLine: 'always', prev: '*', next: 'block-like' },
+            ],
+            'lines-between-class-members': ['error', 'always', { exceptAfterSingleLine: true }],
+            'newline-per-chained-call': ['error', { ignoreChainWithDepth: 2 }],
         },
     },
 ];

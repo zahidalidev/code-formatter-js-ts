@@ -6,14 +6,17 @@ function subtract(a, b) {
     if (typeof b !== 'number') {
         throw new Error('Invalid input: b must be a number');
     }
+
     return b;
 }
+
 function multiplyAndLog(a, b) {
     // This should trigger an error
     const result = a * b;
     console.log(
         `The result of multiplying ${a} and ${b} is ${result}, which is a really long log message to test the max-len rule of 80 characters.`
     );
+
     return result;
 }
 
