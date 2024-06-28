@@ -29,7 +29,6 @@ export default [
             quotes: ['error', 'single'],
             semi: ['error', 'always'],
             indent: ['error', 4],
-            'comma-dangle': ['error', 'always-multiline'],
             'arrow-parens': ['error', 'always'],
             curly: 'error',
             'quote-props': ['error', 'as-needed'],
@@ -41,7 +40,7 @@ export default [
             'max-len': ['error', { code: 80 }],
             'id-match': [
                 'error',
-                '^[a-z]+([A-Z][a-z0-9]*)*$|^[A-Z][a-zA-Z0-9]*$',
+                '^[a-z]+([A-Z0-9][a-z0-9]*)*$|^[A-Z][a-zA-Z0-9]*$',
                 {
                     properties: true,
                     onlyDeclarations: true,

@@ -8,7 +8,6 @@ function subtract(a, b) {
     }
     return b;
 }
-
 function multiplyAndLog(a, b) {
     // This should trigger an error
     const result = a * b;
